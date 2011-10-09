@@ -1,0 +1,87 @@
+From margie.foster at intel.com  Mon Aug  2 13:08:30 2010
+From: margie.foster at intel.com (Foster, Margie)
+Date: Mon, 2 Aug 2010 13:08:30 -0700
+Subject: [MeeGo-announce] MeeGo for IVI v1.0.1 Released Today
+Message-ID: <953CD252072D03469AA527E2E5AD2AA1ED6D8E33@orsmsx508.amr.corp.intel.com>
+
+We are pleased to announce the 1.0 release of MeeGo for IVI.
+(http://meego.com/downloads/releases/1.0/meego-v1.0-in-vehicle-infotainment-ivi)
+As part of this release, we are including a sample IVI Home Screen and
+taskbar,using the included Qt framework, and designed with Automotive
+Center
+Console HMI requirements in mind. We have also included some automotive
+specific middleware components and a few sample applications, including
+sample navigation program (Navit) and a sample dialer application
+BT-HFP Dialer) which uses Bluetooth and a paired phone.
+
+The MeeGo Handset Day 1 User Experience includes:
+
+* Kernel version 2.6.33
+* Home screen and taskbar for launching and managing applications
+* Sample navigation (Navit)
+* Sample Bluetooth-enabled dialer application (BT-HFP Dialer)
+* UI for managing network connections
+* Fennec Browser is MeeGo's Qt based web browser for IVI
+* Packages from open source automotive projects are included for
+audio management, resource management, persistent storage
+management, CE device management, and system health management
+
+For more details about this release, you can view the release notes and
+installation instructions.
+http://meego.com/downloads/releases/1.0/meego-v1.0-in-vehicle-infotainment-ivi
+http://meego.com/devices/in-vehicle/installing-meego-your-intel-ivi-system
+ 
+If you run into any issues or have additional questions about the
+update, you can submit your issue to the MeeGo developer mailing list:
+http://lists.meego.com/listinfo/meego-dev
+
+
+From ning.w.wang at intel.com  Mon Aug  9 22:13:44 2010
+From: ning.w.wang at intel.com (Wang, Ning W)
+Date: Tue, 10 Aug 2010 13:13:44 +0800
+Subject: [MeeGo-announce] MeeGo 1.0 Update for Netbooks
+Message-ID: <D5AB6E638E5A3E4B8F4406B113A5A19A28DDDD8F@shsmsx501.ccr.corp.intel.com>
+
+Today, we are announcing our second update for the MeeGo v1.0 Core Software Platform & Netbook User Experience project release, originally announced on May 25th.
+
+
+
+This update has over 70 bug fixes and is recommended for all users running MeeGo 1.0 for Netbooks. Please notice that this update is an incremental to the first update.
+
+
+
+This update includes general operating system fixes that enhance the stability, compatibility, and security of your devices, as well as:
+
+* Updated to latest SyncEvolution with many bug fixes
+
+* Updated to latest connection manager with many bug fixes
+
+* Media player stability improvements
+
+* Resolution for several email client issues
+
+* Fixed several CVE issues
+
+* Updated L10N translation
+
+
+
+
+
+To get a full list of bug fixes you can visit the release update pages:
+
+http://meego.com/downloads/releases/updates/meego-v1.0.2-core-os-update
+
+http://meego.com/downloads/releases/updates/meego-v1.0.2-netbook-update
+
+
+
+If you run into any issues or have additional questions about the update, you can post them in our MeeGo Netbook Forum:
+
+http://forum.meego.com/forumdisplay.php?f=6
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.meego.com/pipermail/meego-announce/attachments/20100810/30157cdc/attachment.html>
+
