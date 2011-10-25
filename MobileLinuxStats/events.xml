@@ -1,0 +1,50 @@
+<data>
+  <event start="2005-05-28" title="GUADEC 2005" link="http://2005.guadec.org/"/>
+  <event start="2005-11-03" title="Nokia 770 shipped" link="http://en.wikipedia.org/wiki/Nokia_770">
+    Nokia today announced that it has started deliveries of the first device in its new Internet Tablet product category, the Nokia 770. The sleek, pocket sized device is Nokia's first Linux-based terminal product and is dedicated to convenient Internet browsing and email communications over Wi-Fi.
+  </event>
+  <event start="2006-06-20" title="Maemo OS2006 release" link="http://www.linuxfordevices.com/c/a/News/Nokia-770-Tablet-OS-2006-arrives/">
+    Nokia has released a highly anticipated Linux operating system update for the 770 Internet Tablet. The "Tablet OS 2006" update is now available for download by 770 owners on Nokia's website. The most significant changes in the OS are a new EABI (embedded application binary interface) toolchain and several API (application programming interface) changes that require Maemo 1.1 applications to be ported to Maemo 2.0.
+  </event>
+  <event start="2006-06-24" title="GUADEC 2006" link="http://live.gnome.org/GUADEC2006"/>
+  <event start="2007-01-08" title="Nokia N800 shipped" link="http://www.prnewswire.com/news-releases/take-the-internet-to-new-places---the-nokia-n800-internet-tablet-59122702.html">
+    Nokia introduced its next generation widescreen Nokia Nseries multimedia computer, the Nokia N800 Internet Tablet. The sleek Nokia N800 combines a truly personal Internet experience with easy wireless connections, high resolution display and support for a wide variety of Internet applications. The Nokia N800 Internet Tablet has been optimized for enjoying the familiar Web experience anytime, anywhere.
+  </event>
+  <event start="2007-07-15" title="GUADEC 2007" link="http://live.gnome.org/GUADEC/2007"/>
+  <event start="2007-11-19" title="Nokia N810 shipping" link="http://www.mobileburn.com/pressrelease.jsp?Id=3849">
+    Nokia announced today that the new Nokia N810 Internet Tablet has begun shipping nationwide in the United States. With a new slide-out keyboard, built-in GPS, digital audio/video playback and Wi-Fi capability for VoIP calling, the Nokia N810 provides the functionality of a traditional computer but all in one sleek, stylish and portable device.
+  </event>
+  <event start="2008-06-24" title="Maemo OS2008 release" link="http://maemo.org/news/announcements/os2008_feature_upgrade-reflash_your_tablet-for_the_last_time/">
+    Nokia has published the OS2008 Feature Upgrade for the N810 and N800 Internet Tablets. This release is based on Maemo 4.1 (codename Diablo) and provides the Seamless Software Update feature. This release brings a new open source email application based on Modest and the tinymail framework. Users will find a simplified account setup and presets for various service providers. Another major improvement is the introduction to Chinese character rendering support in Email, Browser and RSS feed reader. There are numerous issues fixed all over the operating system including updated openssl. Smaller improvements have also been introduced to several areas such improved browser panning performance.
+  </event>
+  <event start="2008-07-7" title="GUADEC 2008" link="http://guadec.expectnation.com/"/>
+  <event start="2008-08-11" title="Maemo OS2008 OTA update" link="http://en.wikipedia.org/wiki/Maemo">
+    The first SSU update was pushed on August 11, 2008, and brought Diablo up to version 4.2008.30-2. The update primarily features MicroB, Modest, and connectivity framework updates as well as a number of other minor bugfixes.
+  </event>
+  <event start="2009-07-03" title="Gran Canaria Desktop Summit" link="http://www.grancanariadesktopsummit.org/"/>
+  <event start="2009-11-10" title="Nokia N900 shipped" link="http://press.nokia.com/2009/11/10/the-nokia-n900-shipments-have-started/">
+    "The Nokia N900 has generated a lot of interest since its public launch in August, which has been reflected in the device preorders," says José-Luis Martinez, Vice President, Nseries, Nokia. "What's exciting is the Maemo software, which takes its cues from the desktop computer and offers a full browsing experience like no other handset. We believe the Nokia N900 will be a very compelling device for people who are passionate about technology."
+  </event>
+  <event start="2010-01-14" title="Maemo 5/PR1.1 released" link="http://wiki.maemo.org/Maemo_5/PR1.1">
+     The first major update for the Nokia N900. Following quickly on the heels of the minor release earlier this week, this latest version of the software brings with it a range of improvements across the device.
+  </event>
+  <event start="2010-02-16" title="Maemo 5/PR1.1.1 released" link="http://wiki.maemo.org/Maemo_5/PR1.1.1"/>
+  <event start="2010-02-15" title="MeeGo announcement" link="http://www.intel.com/pressroom/archive/releases/2010/20100215corp.htm">
+    Nokia and Intel today announced the merger of Maemo and Moblin to create MeeGo, a Linux-based software platform designed to work across a range of hardware architectures and devices including mobile computers, netbooks, tablets, mediaphones, connected TVs and in-vehicle infotainment systems.
+  </event>
+  <event start="2010-05-25" title="Maemo 5/PR1.2 released" link="http://wiki.maemo.org/Maemo_5/PR1.2"/>
+  <event start="2010-06-30" title="MeeGo Handset UX released" link="http://en.wikipedia.org/wiki/MeeGo_(operating_system)"/>
+  <event start="2010-07-24" title="GUADEC 2010" link="http://2010.guadec.org/"/>
+  <event start="2010-10-25" title="Maemo 5/PR1.3 released" link="http://wiki.maemo.org/Maemo_5/PR1.3"/>
+  <event start="2010-11-15" title="MeeGo Conference Dublin" link="http://conference2010.meego.com/"/>
+  <event start="2011-01-20" title="Maemo 5/SSU released" link="http://wiki.maemo.org/Community_SSU"/>
+  <event start="2011-05-23" title="MeeGo Conference San Francisco" link="http://sf2011.meego.com/"/>
+  <event start="2011-06-21" title="Nokia N9 announced" link="http://en.wikipedia.org/wiki/Nokia_N9"/>
+  <event start="2011-08-06" title="Desktop Summit Berlin" link="https://www.desktopsummit.org/"/>
+  <event start="2011-09-02" title="Intel rumoured to drop MeeGo" link="http://www.digitimes.com/news/a20110901PD217.html">
+    Intel reportedly plans to temporarily discontinue development of its MeeGo OS due to a lack of enthusiasm for the platform from handset and tablet PC vendors.
+  </event>
+  <event start="2011-09-27" title="Tizen Announcement" link="http://newsroom.intel.com/community/intel_newsroom/blog/2011/09/27/chip-shot-intel-to-support-open-source-software-platform-tizen">
+    Today, Intel joined Linux Foundation and LiMo Foundation™ in support of Tizen™, a new Linux-based open source software platform for multiple device categories. The standards-based Tizen project will be hosted at the Linux Foundation and offer an operating system and a robust, flexible standards-based HTML5 and WAC web development environment within which device-independent apps can be produced. Tizen builds upon the strengths of both LiMo and MeeGo and Intel will be working with our MeeGo partners to help them transition to Tizen.
+  </event>
+</data>
