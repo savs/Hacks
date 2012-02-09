@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title><%= title %></title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    html, body {
+      height: 100%;
+      margin: 2;
+      padding: 2;
+    }
+    </style>
+    <script type="text/javascript">
+      function initialize() {
+        var myOptions = {
+          zoom: 12,
+          center: new google.maps.LatLng(<%= latitude %>, <%= longitude %>),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById('map_canvas'),
+            myOptions);
+
+        <% if (poi.length) { %>
+          <% for (var i=0; i < poi.length; i++) { %>
+            var myLatlng<%= i %> = new google.maps.LatLng(<%= poi[i].latitude %>, <%= poi[i].longitude %>);
+            var marker<%= i %> = new google.maps.Marker({
+              position: myLatlng<%= i %>,
+              title: "<%= poi[i].name %>"
+            });
+            // To add the marker to the map, call setMap();
+            marker<%= i %>.setMap(map);
+          <% } %>
+        <% } %>
+
+      }
+
+      function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&' +
+            'callback=initialize';
+        document.body.appendChild(script);
+      }
+
+      window.onload = loadScript;
+    </script>
+</head>
+
+<body>
+	<p><h1>Where are you?</h1></p>
+
+  <p>Your phone's location is <%= location %>, that's near to <%= poi.length %> points of interest.</p>
+
+  <div id="map_canvas" style="width:50%; height:50%"></div>
+  <% if (poi.length) { %>
+  <ul>
+    <% for (var i=0; i < poi.length; i++) { %>
+      <li><%= poi[i].name %></li>
+    <% } %>
+  </ul>
+  <% } %>
+</body>
+</html>

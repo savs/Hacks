@@ -1,0 +1,212 @@
+{
+    "list": {
+        "link": [{
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON093MALL_001",
+            "@parent": "EWTG_LONDON093MALL",
+            "@latitude": "51.50614",
+            "@longitude": "-0.13005",
+            "@title": "The Mall"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON092INSCON_001",
+            "@parent": "EWTG_LONDON092INSCON",
+            "@latitude": "51.50641",
+            "@longitude": "-0.13063",
+            "@title": "Institute of Contemporary Arts"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON092ROYOPE_001",
+            "@parent": "EWTG_LONDON092ROYOPE",
+            "@latitude": "51.50806",
+            "@longitude": "-0.13237",
+            "@title": "Royal Opera Arcade"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON092PALMAL_001",
+            "@parent": "EWTG_LONDON092PALMAL",
+            "@latitude": "51.50684",
+            "@longitude": "-0.13349",
+            "@title": "Pall Mall"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON093STJAM_001",
+            "@parent": "EWTG_LONDON093STJAM",
+            "@latitude": "51.50401",
+            "@longitude": "-0.13443",
+            "@categories": "Gardens_Parks_And_Squares",
+            "@title": "St James’s Park"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON090PICCIR_001",
+            "@parent": "EWTG_LONDON090PICCIR",
+            "@latitude": "51.50987",
+            "@longitude": "-0.1347",
+            "@title": "Piccadilly Circus"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON092STJAM_001",
+            "@parent": "EWTG_LONDON092STJAM",
+            "@latitude": "51.50718",
+            "@longitude": "-0.13533",
+            "@title": "St James’s Square"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON093MARHOU_001",
+            "@parent": "EWTG_LONDON093MARHOU",
+            "@latitude": "51.50464",
+            "@longitude": "-0.13627",
+            "@title": "Marlborough House"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON090STJAM_001",
+            "@parent": "EWTG_LONDON090STJAM",
+            "@latitude": "51.50894",
+            "@longitude": "-0.13685",
+            "@categories": "Churches, Childrens_London",
+            "@title": "St James’s Church"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON090STJAM_001",
+            "@parent": "EWTG_LONDON090STJAM",
+            "@latitude": "51.50894",
+            "@longitude": "-0.13685",
+            "@categories": "Churches, Childrens_London",
+            "@title": "St James’s Church"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON093QUECHA_001",
+            "@parent": "EWTG_LONDON093QUECHA",
+            "@latitude": "51.50497",
+            "@longitude": "-0.13708",
+            "@categories": "Churches",
+            "@title": "Queen’s Chapel"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON091STJAM_001",
+            "@parent": "EWTG_LONDON091STJAM",
+            "@latitude": "51.50509",
+            "@longitude": "-0.13787",
+            "@title": "St James’s Palace"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON090ALBANY_001",
+            "@parent": "EWTG_LONDON090ALBANY",
+            "@latitude": "51.50892",
+            "@longitude": "-0.13842",
+            "@title": "Albany"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON096CLAHOU_001",
+            "@parent": "EWTG_LONDON096CLAHOU",
+            "@latitude": "51.50431",
+            "@longitude": "-0.13843",
+            "@title": "Clarence House"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON090ROYACA_001",
+            "@parent": "EWTG_LONDON090ROYACA",
+            "@latitude": "51.50852",
+            "@longitude": "-0.1391",
+            "@categories": "Museums",
+            "@title": "Royal Academy of Arts"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON096LANHOU_001",
+            "@parent": "EWTG_LONDON096LANHOU",
+            "@latitude": "51.50395",
+            "@longitude": "-0.13937",
+            "@title": "Lancaster House"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON091SPEHOU_001",
+            "@parent": "EWTG_LONDON091SPEHOU",
+            "@latitude": "51.50514",
+            "@longitude": "-0.13964",
+            "@title": "Spencer House"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON091BURARC_001",
+            "@parent": "EWTG_LONDON091BURARC",
+            "@latitude": "51.50928",
+            "@longitude": "-0.14044",
+            "@title": "Burlington Arcade"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON091RITHOT_001",
+            "@parent": "EWTG_LONDON091RITHOT",
+            "@latitude": "51.50712",
+            "@longitude": "-0.14165",
+            "@title": "Ritz Hotel"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON094BUCPAL_003",
+            "@parent": "EWTG_LONDON094BUCPAL_002",
+            "@latitude": "51.50134",
+            "@longitude": "-0.1419",
+            "@categories": "Ceremonies",
+            "@title": "Buckingham Palace"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON097FARMUS_001",
+            "@parent": "EWTG_LONDON097FARMUS",
+            "@latitude": "51.51008",
+            "@longitude": "-0.14254",
+            "@categories": "Museums",
+            "@title": "Faraday Museum"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON096QUEGAL_001",
+            "@parent": "EWTG_LONDON096QUEGAL",
+            "@latitude": "51.49998",
+            "@longitude": "-0.14251",
+            "@title": "The Queen’s Gallery"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON097GREPAR_001",
+            "@parent": "EWTG_LONDON097GREPAR",
+            "@latitude": "51.5058",
+            "@longitude": "-0.1433",
+            "@categories": "Gardens_Parks_And_Squares",
+            "@title": "Green Park"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON096ROYMEW_001",
+            "@parent": "EWTG_LONDON096ROYMEW",
+            "@latitude": "51.49857",
+            "@longitude": "-0.14392",
+            "@title": "Royal Mews"
+        },
+        {
+            "@tag": "tg_info",
+            "@id": "EWTG_LONDON097SHEMAR_001",
+            "@parent": "EWTG_LONDON097SHEMAR",
+            "@latitude": "51.50668",
+            "@longitude": "-0.14666",
+            "@title": "Shepherd Market"
+        }]
+    }
+}
