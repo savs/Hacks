@@ -1,6 +1,18 @@
 #!/bin/bash
 # Simple script to download named lists from a range of projects.
 
+# We don't want the archives to be stored in git
+if [ ! -e ".gitignore" ] ; then
+    echo "archives/" > .gitignore
+fi
+
+# Top-level container for all our projects and lists
+if [ ! -d "archives" ] ; then
+    mkdir archives
+fi
+
+cd archives
+
 echo "Project MeeGo"
 if [ ! -d "MeeGo" ] ; then
 	mkdir MeeGo
@@ -12,7 +24,7 @@ for i in meego-adaptation-intel-automotive meego-announce meego-architecture mee
 		mkdir $i
 	fi
 	cd $i
-	wget -nv -nd -N -r -l 1 -A .gz http://lists.meego.com/pipermail/$i/
+	wget -nv -nd -N -r -l 1 -A .gz,.txt http://lists.meego.com/pipermail/$i/
 	cd ..
 done
 cd ..
@@ -28,7 +40,7 @@ for i in general ; do
 		mkdir $i
 	fi
 	cd $i
-	wget -nv -nd -N -r -l 1 -A .gz http://lists.tizen.org/pipermail/$i/
+	wget -nv -nd -N -r -l 1 -A .gz,.txt http://lists.tizen.org/pipermail/$i/
 	cd ..
 done
 cd ..
@@ -44,7 +56,25 @@ for i in maemo-announce maemo-commits maemo-community maemo-developers maemo-use
                 mkdir $i
         fi
         cd $i
-        wget -nv -nd -N -r -l 1 -A .gz http://lists.maemo.org/pipermail/$i/
+        wget -nv -nd -N -r -l 1 -A .gz,.txt http://lists.maemo.org/pipermail/$i/
         cd ..
 done
+cd ..
+
+echo "Project Ubuntu"
+if [ ! -d "Ubuntu" ] ; then
+        mkdir Ubuntu
+fi
+cd Ubuntu
+for i in ubuntu-devel ubuntu-devel-discuss ; do
+        echo "Getting $i"
+        if [ ! -d $i ] ; then
+                mkdir $i
+        fi
+        cd $i
+        wget -nv -nd -N -r -l 1 -A .gz,.txt http://lists.ubuntu.com/archives/$i/
+        rm robots.txt
+        cd ..
+done
+cd ..
 cd ..

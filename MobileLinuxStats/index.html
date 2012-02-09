@@ -1,15 +1,127 @@
 <html>
-<head>
-<title>Mobile Linux Community Statistics</title>
-</head>
-<body>
-<h1>Mobile Linux Community Statistics</h1>
-<p>By analysing mailing list traffic, we can get a general idea of the health of various mobile linux communities.</p>
-<h2>Tizen</h2>
-<a href="Tizen/index.html"><img src="Tizen/aggregate.gif" alt="Tizen" /></a>
-<h2>MeeGo</h2>
-<a href="MeeGo/index.html"><img src="MeeGo/aggregate.gif" alt="MeeGo" /></a>
-<h2>Maemo</h2>
-<a href="Maemo/index.html"><img src="Maemo/aggregate.gif" alt="Maemo" /></a>
-</body>
+  <head>
+    <title>Mobile Linux Community Statistics</title>
+    <link href="http://www.andrewsavory.com/style.css" type="text/css" rel="stylesheet"/> 
+    <style type="text/css">
+    .maemo {
+      color: #F16538;
+      background-color: #503B41;
+    }
+    .meego {
+      color: #E2007A;
+      background-color: #810042;
+    }
+    .tizen {
+      color: #0000ff;
+      background-color:;
+    }
+    .ubuntu {
+      color: #DD4814;
+      background-color: #F7F6F5;
+    }
+    </style>
+    <script src="/timeplot/api/1.0/timeplot-api.js?local" type="text/javascript"></script>
+    <script type="text/javascript">
+    var timeplot;
+
+    function onLoad() {
+      
+      var timeGeometry = new Timeplot.DefaultTimeGeometry({
+        gridColor: "#000000",
+        //axisLabelsPlacement: "top"
+        });
+
+      var valueGeometry = new Timeplot.DefaultValueGeometry({
+        gridColor: "#000000",
+        axisLabelsPlacement: "left",
+        //min: 0,
+        //max: 1000
+        });
+
+        // FIXME we can save time by combining these all into a single file; left as-is for now for easier debugging
+      var MeeGoSource = new Timeplot.DefaultEventSource();
+      var MeeGoDataSource = new Timeplot.ColumnSource(MeeGoSource,1);
+
+      var TizenSource = new Timeplot.DefaultEventSource();
+      var TizenDataSource = new Timeplot.ColumnSource(TizenSource,1);
+
+      var MaemoSource = new Timeplot.DefaultEventSource();
+      var MaemoDataSource = new Timeplot.ColumnSource(MaemoSource,1);
+      
+      var UbuntuSource = new Timeplot.DefaultEventSource();
+      var UbuntuDataSource = new Timeplot.ColumnSource(UbuntuSource,1);
+
+      var eventSource = new Timeplot.DefaultEventSource();
+
+      var plotInfo = [
+        Timeplot.createPlotInfo({
+          id: "Maemo",
+          dataSource: MaemoDataSource,
+          timeGeometry: timeGeometry,
+          valueGeometry: valueGeometry,
+          lineColor: "#F16538",
+          fillColor: "#503B41",
+          }),
+        Timeplot.createPlotInfo({
+          id: "MeeGo",
+          dataSource: MeeGoDataSource,
+          timeGeometry: timeGeometry,
+          valueGeometry: valueGeometry,
+          lineColor: "#E2007A",
+          fillColor: "#810042",
+        }),
+        Timeplot.createPlotInfo({
+          id: "Tizen",
+          dataSource: TizenDataSource,
+          timeGeometry: timeGeometry,
+          valueGeometry: valueGeometry,
+          lineColor: "#0000ff",
+        }),
+        Timeplot.createPlotInfo({
+          id: "Ubuntu",
+          dataSource: UbuntuDataSource,
+          timeGeometry: timeGeometry,
+          valueGeometry: valueGeometry,
+          lineColor: "#DD4814",
+          fillColor: "#F7F6F5",
+        }),
+        Timeplot.createPlotInfo({
+          id: "Events",
+          timeGeometry: timeGeometry,
+          eventSource: eventSource,
+          lineColor: "#00ff00",
+        })
+      ];
+
+      timeplot = Timeplot.create(document.getElementById("my-timeplot"), plotInfo);
+      timeplot.loadText("MeeGo_stats.txt", ",", MeeGoSource);
+      timeplot.loadText("Tizen_stats.txt", ",", TizenSource);
+      timeplot.loadText("Maemo_stats.txt", ",", MaemoSource);
+      timeplot.loadXML("events.xml", eventSource);
+    }
+
+    var resizeTimerID = null;
+    function onResize() {
+        if (resizeTimerID == null) {
+            resizeTimerID = window.setTimeout(function() {
+                resizeTimerID = null;
+                timeplot.repaint();
+            }, 100);
+        }
+    }
+    </script>
+  </head>
+  <body onload="onLoad();" onresize="onResize();">
+    <h1>Mobile Linux Community Statistics</h1>
+    <p>By analysing mailing list traffic, we can get a general idea of the health of various mobile linux communities. I've done this analysis on <a href="http://www.maemo.org/">Maemo</a>, <a href="http://www.meego.org/">MeeGo</a> and <a href="http://www.tizen.org/">Tizen</a>. The data is gathered and analysed using a <a href="https://github.com/savs/Hacks/tree/master/MobileLinuxStats">custom script</a>, and plotted using <a href="http://www.simile-widgets.org/timeplot/">SIMILE Timeplot</a>.</p>
+
+    <div id="my-timeplot" style="height: 150px;"></div>
+    <p>Key:</p>
+    <ul>
+      <li><span class="maemo">Maemo</span></li>
+      <li><span class="meego">MeeGo</span></li>
+      <li><span class="tizen">Tizen</span></li>
+    </ul>
+  </body>
 </html>
+

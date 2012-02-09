@@ -2,7 +2,11 @@
 #
 # A very rough-and-ready script to parse mbox archives for mailman lists and generate basic statistics
 # It will parse a folder of lists containing monthly mailman archives.
-# Run it from the top-level directory that contains the projects (each project containing lists)
+# Run it from the top-level archive directory that contains the projects (each project containing lists)
+
+# TODO add person recognition
+# TODO add breakdown by day
+# TODO add breakdown by list
 
 use strict;
 use Mail::Mbox::MessageParser;
@@ -10,41 +14,29 @@ use GD::Graph::bars;
 use Data::Dumper;
 
 my $verbose = 0;
-my $debug = 0;
+my $debug = 1;
 
 # Configure your list of projects here
 # See also get_archives.sh
-my @projects = ("Tizen", "MeeGo", "Maemo");
-#my @projects = ("Maemo");
+# For example:
+# my @projects = ("Tizen", "MeeGo", "Maemo");
+# TODO make this a split ' ' (find -d in archives) or specify projects on command line?
+my @projects = ("Tizen", "MeeGo", "Maemo", "Ubuntu");
 
+# TODO: replace MessageParser with something more sophisticated to get more detail
 Mail::Mbox::MessageParser::SETUP_CACHE( { 'file_name' => '/tmp/mboxcache'});
 my %month; @month{qw/January February March April May June July August September October November December/} = (1 .. 12);
 my %list_stats;
 my $max_mails = 0;
 
 
-# GD function
-sub save_chart
-{
-	my $chart = shift or die "Need a chart!";
-	my $name = shift or die "Need a name!";
-	local(*OUT);
-
-	my $ext = $chart->export_format;
-
-	open(OUT, ">$name.$ext") or 
-		die "Cannot open $name.$ext for write: $!";
-	binmode OUT;
-	print OUT $chart->gd->$ext();
-	close OUT;
-}
-
+# Go through each mailing list archive and gather statistics
 sub process_archives
 {
     my $project = shift or die "Need a project name";
     
     # Parse a directory containing one or more folders named after the list name, containing mbox archives by year and month.
-    # Mbox archives can optionally be compressed
+    # Mbox archives can optionally be compressed (feature of MessageParser)
     print "Project: $project\n";
     my @lists = `find $project/* -prune -type d`;
 
@@ -94,64 +86,11 @@ sub process_archives
     }
     print "Most traffic: $max_mails\n" if $verbose;
 
-    # Generate individual charts
-    for my $list (keys %list_stats) {
-        my @years_months;
-        my @years_months_mails;
-
-        print "$list\n" if $verbose;
-        for my $year (sort keys % {$list_stats{$list}}) {
-            print "Year: $year\n" if $verbose;
-            for my $month (sort keys %{$list_stats{$list}{$year}}) {
-                print "Month: $month\n" if $verbose;
-                push @years_months, "$year-$month";
-                #print "\t$year $month $list_stats{$list}{$year}{$month}\n" if $verbose;
-                push @years_months_mails, $list_stats{$list}{$year}{$month};
-            }
-        }
-        my @data = (\@years_months, \@years_months_mails);
-        my $width = scalar @years_months * 50;
-        my $graph = GD::Graph::bars->new($width,300);
-        $graph->set(
-            x_label => 'Month',
-            y_label => 'Messages',
-            title   => 'Messages per month',
-            dclrs   => [ qw(purple)],
-        ) or warn $graph->error;
-
-        my $image = $graph->plot(\@data) or die "Unable to plot graph: " . $graph->error;
-        save_chart($graph, "$project/$list");
-
-
-    }
-
-    # Generate aggregate chart, hash of hashes: year, month, mail count.
-    # %HoH = (
-    #    "2010"   => {
-    #                   1 => "20",
-    #                   2 => "31",
-    #                   ...
-    #                   12 => "9",
-    #   }
-    #    "2011"   => {
-    #                   1 => "5",
-    #                   2 => "122",
-    #                   ...
-    #                   12 => "3",
-    #   }
-    #    );
     my %aggregate;
-    open(INDEX, ">$project/index.html") or die "Cannot open $project/index.html for write: $!";
-    print INDEX "<html><head><title>Mailing list statistics</title></head<body><h1>Mailing list statistics</h1>";
-    print INDEX "<h2>Aggregated results</h2>";
-    print INDEX "<img src='aggregate.gif' />";
-
+    
     for my $list (keys %list_stats) {
 
         for my $year (sort keys % {$list_stats{$list}}) {
-            #if (!$aggregate{$year}) {
-            #    $aggregate{$year} = $year;
-            #}
             for my $month (sort keys %{$list_stats{$list}{$year}}) {
                 if (!$aggregate{$year}{$month}) {
                     print "$year $month set to $list_stats{$list}{$year}{$month}: " if $debug;
@@ -164,14 +103,12 @@ sub process_archives
                 }
             }
         }
-        print INDEX "<h2>$list</h2>";
-        print INDEX "<img src='" . $list . ".gif'/>";
 
     }
-    print INDEX "</body></html>";
-    close INDEX;
-
     print "\n" if $debug;
+
+    my $fname = $project . "_stats.txt";
+    open(DATA, ">../$fname") || die "Unable to open DATA: $!\n";
 
     my @years_months;
     my @years_months_mails;
@@ -182,24 +119,14 @@ sub process_archives
             print "  $aggregate{$year}{$month}\n" if $debug;
             push @years_months, "$year-$month";
             push @years_months_mails, "$aggregate{$year}{$month}";
+            print DATA "$year-$month,$aggregate{$year}{$month}\n";
+            
         }
     }
+    
+    close(DATA);
 
-    my @data = (\@years_months, \@years_months_mails);
-    #print Dumper(@data);
-    my $width = scalar @years_months * 50;
-    my $graph = GD::Graph::bars->new($width,300);
-    $graph->set(
-        x_label => 'Month',
-        y_label => 'Messages',
-        title   => 'Messages per month',
-        dclrs   => [ qw(purple)],
-    ) or warn $graph->error;
-
-    my $image = $graph->plot(\@data) or die "Unable to plot graph: " . $graph->error;
-    save_chart($graph, "$project/aggregate");
 }
-
 
 
 
