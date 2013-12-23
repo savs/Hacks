@@ -35,7 +35,7 @@ case "$1" in
 		sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist
 		;;
 	*)
-		echo "Unrecognised option: $0"
+		echo "Unrecognised option: $1"
 		;;
 esac
 
