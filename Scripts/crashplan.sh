@@ -1,6 +1,7 @@
 #!/bin/bash
 # http://hints.macworld.com/article.php?story=20110124224322791
 # http://support.code42.com/CrashPlan/Latest/Troubleshooting/Stopping_and_Starting_The_CrashPlan_App
+# https://discussions.apple.com/message/20815942#20815942
 NO_ARGS=0
 
 usage ()
@@ -33,7 +34,12 @@ case "$1" in
 		echo "Turning off crashplan. Please enter root password if prompted."
 		sudo launchctl stop com.crashplan.engine
 		sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist
+# Set Reminder to re-enable Crashplan
+/usr/bin/env osascript <<-EOF
+tell application "Reminders" to make new reminder with properties {name:"Turn on CrashPlan", due date:((current date) + (24 * 60 * 60))}
+EOF
 		;;
+
 	*)
 		echo "Unrecognised option: $1"
 		;;
