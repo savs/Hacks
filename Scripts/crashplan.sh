@@ -36,7 +36,7 @@ case "$1" in
 		sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist
 # Set Reminder to re-enable Crashplan
 /usr/bin/env osascript <<-EOF
-tell application "Reminders" to make new reminder with properties {name:"Turn on CrashPlan", due date:((current date) + (24 * 60 * 60))}
+tell application "Reminders" to make new reminder with properties {name:"Turn on CrashPlan", due date:((current date) + (48 * 60 * 60))}
 EOF
 		;;
 
