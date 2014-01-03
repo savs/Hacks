@@ -15,7 +15,7 @@ repeat
 end repeat
 EOF
 echo "- Mail quit, backing-up..."
-DATE=`date +'%Y%m%d%H%m'`
+DATE=`date +'%Y%m%d%H%M'`
 mkdir ~/Mail-$DATE
 mv ~/Library/Mail/V2/MailData/Envelope* ~/Mail-$DATE/
 echo "- Starting Mail..."
