@@ -34,7 +34,7 @@ do
 
     # Compare it with old
     if [ "$NEW" != "$OLD" ]; then
-        RESULT=`rsync --delete -avz $DIR .`
+        RESULT=`rsync --delete -avz --exclude '.git' $DIR .`
         if which growlnotify >/dev/null; then
             growlnotify -n sync -a Terminal -t "$0 $1" -m "$RESULT"
         else
@@ -44,6 +44,6 @@ do
     fi
 
     # How frequently the sync check should run
-    sleep 3
+    sleep 5
 
 done
